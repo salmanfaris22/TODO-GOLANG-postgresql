@@ -9,12 +9,13 @@ import (
 func ShowTodoList(db *gorm.DB) {
 	for {
 		var num int
-		fmt.Println("1: ADD")
-		fmt.Println("2: GET WITH SELECT")
-		fmt.Println("3: GET ALL")
-		fmt.Println("4: UPDATE WITH ID")
-		fmt.Println("5: DELETE WITH ID")
-		fmt.Println("6: EXIT")
+		fmt.Println("\033[33m1: ADD\033[0m")             // Yellow for "ADD"
+		fmt.Println("\033[36m2: GET WITH SELECT\033[0m") // Cyan for "GET WITH SELECT"
+		fmt.Println("\033[36m3: GET ALL\033[0m")         // Cyan for "GET ALL"
+		fmt.Println("\033[34m4: UPDATE WITH ID\033[0m")  // Blue for "UPDATE WITH ID"
+		fmt.Println("\033[31m5: DELETE WITH ID\033[0m")  // Red for "DELETE WITH ID"
+		fmt.Println("\033[32m6: EXIT\033[0m")            // Green for "EXIT"
+
 		_, err := fmt.Scan(&num)
 		if err != nil {
 			fmt.Println("Please enter a valid number:", err.Error())
